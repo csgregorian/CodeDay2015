@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #222;
+  color: #ddd;
+}
+input {
+  display: block;
+  margin: 16px auto;
+}
+input[type="submit"] {
+  background-color: #fff;
+  display: block;
+  margin: 16px auto;
+}

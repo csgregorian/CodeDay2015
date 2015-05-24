@@ -2,23 +2,14 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #222;
-  color: #ddd;
+  background-color: #fff;
+  color: #000;
 }
-#searchbox {
-  color: #222;
+row {
+  display: block;
 }
-h1 {
-  text-align: center;
-  color: #fff;
-}
-h3 {
-  text-align: center;
-}
-.four.columns {
-  background-color: #444;
-  border-radius: 5px;
-}
-ul {
-  padding: 20px;
+li {
+  list-style-type: none;
+  display: block;
+  margin-bottom: 4rem;
 }

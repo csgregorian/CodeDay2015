@@ -22,6 +22,13 @@ router.get('/api/items', function(req, res, next) {
 });
 
 router.post('/api/items', function(req, res, next) {
+	if (req.body.price == "") {
+		req.body.price = Math.floor(Math.random() * 20);
+	}
+	if (req.body.quantity == "") {
+		req.body.quantity = Math.floor(Math.random() * 50);
+	}
+
 	var item = new Item(req.body);
 
 	item.save(function(err, post) {
@@ -32,7 +39,11 @@ router.post('/api/items', function(req, res, next) {
 		res.set("Content-Type", "application/json");
 		res.send(item);
 	});
-
 });
+
+router.get('/additems', function(req, res, next) {
+	res.render('add_item.ejs');
+});
+
 
 module.exports = router;
