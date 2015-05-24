@@ -9,45 +9,22 @@
     <script src="js/angularApp.js"></script>
   </head>
 
-  <body ng-app="CodeDay2015" ng-controller="main" ng-keypress="keyPress($event)">
+  <body ng-app="CodeDay2015" ng-controller="main" ng-keydown="keyPress($event)">
   	<h1>CodeDay 2015</h1>
-  	<input type="text" id="searchbox" ng-model="query" ng-change="searchItems(query)">
+  	<p><em>A cash register for the 21st century</em></p>
+  	<input type="text" id="searchbox" ng-model="query" ng-change="searchItems(query)" autocomplete="off">
 
 	<div class="row">
-		<!-- Start -->
-		<div class="four columns">
-			<h3>Command</h3>
+		<div class="four columns" ng-repeat="i in [0, 1, 2]">
+			<h3>{{ current_view[$x] }}</h3>
 			<ul>
-				<li ng-repeat="command in commands">{{ command }}</li>
-			</ul>
-		</div>
-
-		<!-- Items -->
-		<div class="four columns">
-			<h3>Items</h3>
-			<ul>
-				<li ng-repeat="item in selected_items">
-					<div class="item">
-						<div style="display:block">{{ item.name }}</div>
-						<div class="u-pull-left"><em>{{ item.price }}</em></div>
-						<div class="u-pull-right"><strong>{{ item.quantity }}</strong></div>
+				<li ng-repeat="element in ">
+					<div>
+						{{ element }}
 					</div>
 				</li>
 			</ul>
 		</div>
-
-		<!-- Modifiers -->
-		<div class="four columns">
-			<h3>Modifier</h3>
-			<ul>
-				<li ng-repeat="modifier in modifiers">{{ modifier }}</li>
-			</ul>
-		</div>
-
-
-
-
-
 	</div>
 	
 

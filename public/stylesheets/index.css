@@ -3,13 +3,37 @@
 }
 body {
   background-color: #fff;
-  color: #000;
+  color: #222;
 }
 row {
   display: block;
 }
+ul {
+  background-color: #aaa;
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+}
 li {
   list-style-type: none;
   display: block;
-  margin-bottom: 4rem;
+  height: 5.5rem;
+  padding: 5px;
+}
+li#selected {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+li:not(#selected) {
+  background-color: #888;
+}
+h1 {
+  margin-bottom: 0;
+}
+p {
+  margin: 1rem;
+  margin-top: 0;
+}
+input {
+  display: block;
+  margin: auto;
 }

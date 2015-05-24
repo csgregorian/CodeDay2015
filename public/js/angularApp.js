@@ -43,25 +43,27 @@ function fuzzyMatch(searchSet, query) {
 app.controller('main', [
 	'$scope', '$http',
 	function($scope, $http) {
-		$scope.commands = ["New Order", "Price Check", "Inventory Check"];
+		// Starting commands
+		$scope.current_view = ["commands", "items", "subtotal"];
+		$scope.commands = ["New Order", "New Item"];
+		$scope.items = ["Hamburger", "Hot Dog", "French Fries"];
+		$scope.subtotal = ["Quantity", "Price"];
 
-		$http.get('http://localhost:3000/api/items').
-		then(function(res) {
-			$scope.items = res.data;
 
-			console.log($scope.items);
-		});
 
 		$scope.keyPress = function(keyEvent) {
-			console.log(keyEvent.which);
+			var k = {left:37, up:38, right:39, down:40, enter:13, escape:27};
+			var code = keyEvent.which;
 		}
 
 		$scope.searchItems = function(query) {
-			console.log(query);
 			if (query == "" || query == "*") {
 				$scope.selected_items = $scope.items;
 			}
 			$scope.selected_items = fuzzyMatch($scope.items, query);
+
+			$scope.max = $scope.selected_items.length - 1;
+			$scope.cursor = 0;
 		}
 	}
 

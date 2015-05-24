@@ -1,21 +1,46 @@
-bg = #222222
-bg2 = #444444
-text = #DDDDDD
-neon = #FFFFFF
-accent1 = #666666
-accent2 = #888888
+bg = #FFFFFF
+bg2 = #CCCCCC
+bg3 = #AAAAAA
+text = #222222
+neon = #444444
+accent1 = #888888
+accent2 = #666666
 
 *
 	box-sizing border-box
 
 body
-	background-color white
-	color black
+	background-color bg
+	color text
 
 row
 	display block
 	
+ul
+	background-color bg3
+	padding 1rem
+	padding-bottom 0.5rem
+
 li
 	list-style-type none
 	display block
-	margin-bottom 4rem
+	height 5.5rem
+	padding 5px
+	
+li#selected
+	background-color bg2
+	border-radius 10px
+	
+li:not(#selected)
+	background-color accent1
+	
+h1
+	margin-bottom 0
+
+p
+	margin 1rem
+	margin-top 0
+	
+input
+	display block
+	margin auto
